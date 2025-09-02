@@ -1,0 +1,21 @@
+(su -l user) = (su - Abdulrahman), and for the root = (su - root) = (su -): this command changes the user and the entire environment.
+(sudo =^^) like the previous command but it does just one command as the selected user and does not change the environment.
+
+إنشاء مجموعة جديدة:
+sudo groupadd <group_name>
+نضيف مكان <group_name> اسم المجموعة الجديدة.
+
+إضافة مستخدم إلى مجموعة:
+sudo usermod -aG <group_name> <username>
+نضيف مكان <group_name> اسم المجموعة التي نريد إضافة المستخدم إليها، ومكان <username> اسم المستخدم.
+
+معرفة المجموعات التي ينتمي إليها مستخدم:
+groups <username>
+حذف مستخدم من مجموعة معينة:
+sudo gpasswd -d <username> <group_name>
+حذف مجموعة:
+sudo groupdel <group_name>
+البحث عن مجموعة ضمن ملف المجموعات مع إظهار المستخدمين ضمنها:
+cat /etc/group | grep <group_name>
+إعطاء صلاحيات الجذر لمستخدم عبر إضافته لمجموعة sudo:
+sudo usermod -aG sudo <username>
